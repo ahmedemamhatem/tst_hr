@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-27 21:47:57.916985",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "offer_term",
+  "value__description",
+  "approve"
+ ],
+ "fields": [
+  {
+   "fieldname": "offer_term",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Offer Term",
+   "options": "Offer Term",
+   "reqd": 1
+  },
+  {
+   "fieldname": "value__description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Value / Description",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "approve",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Approve"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-27 21:50:43.412247",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Offer Terms",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

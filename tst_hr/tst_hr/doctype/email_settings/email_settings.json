@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-28 02:11:51.508248",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "email_recipient_settings_section",
+  "email_recipient_role",
+  "employee_manager",
+  "section_break_wndr",
+  "sponsorship_transfer_schedule",
+  "section_break_hpsy",
+  "probation_and_confirmation_schedule"
+ ],
+ "fields": [
+  {
+   "fieldname": "email_recipient_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Email Recipient Settings"
+  },
+  {
+   "fieldname": "email_recipient_role",
+   "fieldtype": "Table",
+   "options": "Email Recipient Role"
+  },
+  {
+   "default": "0",
+   "fieldname": "employee_manager",
+   "fieldtype": "Check",
+   "label": "Employee Manager"
+  },
+  {
+   "fieldname": "section_break_wndr",
+   "fieldtype": "Section Break",
+   "label": "Sponsorship Transfer Schedule"
+  },
+  {
+   "fieldname": "sponsorship_transfer_schedule",
+   "fieldtype": "Table",
+   "options": "Email Schedule"
+  },
+  {
+   "fieldname": "section_break_hpsy",
+   "fieldtype": "Section Break",
+   "label": "Probation and Confirmation Schedule"
+  },
+  {
+   "fieldname": "probation_and_confirmation_schedule",
+   "fieldtype": "Table",
+   "options": "Email Schedule"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-06-28 02:39:44.256902",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Email Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-28 02:14:48.585171",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "send_after_days",
+  "have_extension"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "default": "0",
+   "fieldname": "have_extension",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Have Extension"
+  },
+  {
+   "columns": 4,
+   "fieldname": "send_after_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Send After (Days)",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-28 02:44:41.105351",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Email Schedule",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

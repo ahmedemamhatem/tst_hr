@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-26 22:08:01.334253",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "previous_salary",
+  "current_salary",
+  "date",
+  "change_reason",
+  "gosi_updated"
+ ],
+ "fields": [
+  {
+   "fieldname": "previous_salary",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Previous Salary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_salary",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Current Salary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "change_reason",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Change Reason",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gosi_updated",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "GOSI Updated"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-28 05:04:16.428818",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Update Salary Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

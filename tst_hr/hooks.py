@@ -43,7 +43,11 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Interview" : "triggers/hr/interview/interview.js",
+    "Job Offer":"triggers/hr/job_offer/job_offer.js",
+    "Employee":"triggers/setup/employee/employee.js"
+    }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -129,42 +133,50 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Payroll Entry": "tst_hr.overrides.payroll.payroll_entry.payroll_entry.CustomPayrollEntry"
+}
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "Employee":{
+        "validate":"tst_hr.triggers.setup.employee.employee.validate"
+    }
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"tst_hr.tasks.all"
-# 	],
-# 	"daily": [
-# 		"tst_hr.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"tst_hr.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"tst_hr.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"tst_hr.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"tst_hr.tasks.all"
+	# ],
+	"daily": [
+		"tst_hr.tasks.daily"
+	],
+	# "hourly": [
+	# 	"tst_hr.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"tst_hr.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"tst_hr.tasks.monthly"
+	# ],
+}
+
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "=", "Tst Hr"]]},
+    {"dt": "Property Setter", "filters": [["module", "=", "Tst Hr"]]},
+]
 
 # Testing
 # -------

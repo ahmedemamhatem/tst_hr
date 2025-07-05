@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-05 23:48:58.428692",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bu0m",
+  "amended_from",
+  "naming_series",
+  "section_break_ztzd",
+  "posting_date",
+  "section_break_zmvn",
+  "employee",
+  "employee_name",
+  "date_of_joining",
+  "column_break_dwlv",
+  "department",
+  "section",
+  "column_break_aatz",
+  "designation",
+  "branch",
+  "section_break_efpz",
+  "promotion_to_new_job_title",
+  "new_job_title",
+  "salary_adjustment",
+  "current_salary",
+  "new_salary",
+  "section_break_fnfr",
+  "request_reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bu0m",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Promotion and Salary Adjustment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_ztzd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zmvn",
+   "fieldtype": "Section Break",
+   "label": "Employee Data"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date Of Joining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dwlv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_section",
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Sections",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_aatz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_efpz",
+   "fieldtype": "Section Break",
+   "label": "Request Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "promotion_to_new_job_title",
+   "fieldtype": "Check",
+   "label": "Promotion to New Job Title"
+  },
+  {
+   "default": "0",
+   "fieldname": "salary_adjustment",
+   "fieldtype": "Check",
+   "label": "Salary Adjustment"
+  },
+  {
+   "depends_on": "eval:doc.promotion_to_new_job_title",
+   "fieldname": "new_job_title",
+   "fieldtype": "Link",
+   "label": "New Job Title",
+   "mandatory_depends_on": "eval:doc.promotion_to_new_job_title",
+   "options": "Designation"
+  },
+  {
+   "depends_on": "eval:doc.salary_adjustment",
+   "fetch_from": "employee.ctc",
+   "fieldname": "current_salary",
+   "fieldtype": "Currency",
+   "label": "Current Salary",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.salary_adjustment",
+   "fieldname": "new_salary",
+   "fieldtype": "Currency",
+   "label": "New Salary",
+   "mandatory_depends_on": "eval:doc.salary_adjustment"
+  },
+  {
+   "fieldname": "section_break_fnfr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "request_reason",
+   "fieldtype": "Small Text",
+   "label": " <strong>Request Reason</strong>",
+   "reqd": 1
+  },
+  {
+   "default": "Req-",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-06 00:16:16.539208",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Promotion and Salary Adjustment",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

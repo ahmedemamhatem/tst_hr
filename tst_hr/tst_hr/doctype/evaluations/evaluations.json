@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-06 01:46:56.040222",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clause",
+  "excellent",
+  "very_good",
+  "good",
+  "acceptable",
+  "poor"
+ ],
+ "fields": [
+  {
+   "fieldname": "clause",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Clause",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "excellent",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Excellent  "
+  },
+  {
+   "default": "0",
+   "fieldname": "very_good",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Very Good"
+  },
+  {
+   "default": "0",
+   "fieldname": "good",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Good  "
+  },
+  {
+   "default": "0",
+   "fieldname": "acceptable",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Acceptable"
+  },
+  {
+   "default": "0",
+   "fieldname": "poor",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Poor"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-06 02:01:39.192627",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Evaluations",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

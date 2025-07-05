@@ -1,0 +1,246 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-06 00:28:11.388120",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_i2vc",
+  "amended_from",
+  "naming_series",
+  "section_break_mlki",
+  "date",
+  "section_break_ckkz",
+  "employee",
+  "employee_name",
+  "column_break_vugx",
+  "department",
+  "section",
+  "column_break_ffva",
+  "designation",
+  "branch",
+  "section_break_ehkl",
+  "investigators",
+  "section_break_vhtk",
+  "subject_of_investigation",
+  "incident_summary",
+  "employee_statement",
+  "witness_statements",
+  "investigation_committee_notes",
+  "investigation_committee_recommendation_section",
+  "archive_case",
+  "issue_verbal_warning",
+  "issue_warning",
+  "salary_deduction",
+  "terminate_employment",
+  "other",
+  "clarification"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_i2vc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Internal Disciplinary Investigation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_mlki",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_ckkz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vugx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_section",
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Sections",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ffva",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ehkl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "investigators",
+   "fieldtype": "Table",
+   "label": "Investigators",
+   "options": "Investigator"
+  },
+  {
+   "fieldname": "section_break_vhtk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "subject_of_investigation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Subject of Investigation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "incident_summary",
+   "fieldtype": "Small Text",
+   "label": "Incident Summary"
+  },
+  {
+   "fieldname": "employee_statement",
+   "fieldtype": "Small Text",
+   "label": "Employee Statement"
+  },
+  {
+   "fieldname": "witness_statements",
+   "fieldtype": "Small Text",
+   "label": "Witness statements"
+  },
+  {
+   "fieldname": "investigation_committee_notes",
+   "fieldtype": "Small Text",
+   "label": "Investigation Committee Notes"
+  },
+  {
+   "fieldname": "investigation_committee_recommendation_section",
+   "fieldtype": "Section Break",
+   "label": "Investigation Committee Recommendation"
+  },
+  {
+   "default": "0",
+   "fieldname": "archive_case",
+   "fieldtype": "Check",
+   "label": "Archive Case"
+  },
+  {
+   "default": "0",
+   "fieldname": "issue_verbal_warning",
+   "fieldtype": "Check",
+   "label": "Issue Verbal Warning"
+  },
+  {
+   "default": "0",
+   "fieldname": "issue_warning",
+   "fieldtype": "Check",
+   "label": "Issue Warning"
+  },
+  {
+   "default": "0",
+   "fieldname": "salary_deduction",
+   "fieldtype": "Check",
+   "label": "Salary Deduction"
+  },
+  {
+   "default": "0",
+   "fieldname": "terminate_employment",
+   "fieldtype": "Check",
+   "label": "Terminate Employment"
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other"
+  },
+  {
+   "depends_on": "eval:doc.other",
+   "fieldname": "clarification",
+   "fieldtype": "Small Text",
+   "label": "Clarification"
+  },
+  {
+   "default": "Invest-",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-06 01:01:28.205991",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Internal Disciplinary Investigation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

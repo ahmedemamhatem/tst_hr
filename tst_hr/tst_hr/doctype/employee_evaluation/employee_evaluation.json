@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-06 01:33:42.117146",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_cuuq",
+  "amended_from",
+  "naming_series",
+  "section_break_otos",
+  "date",
+  "section_break_vjnn",
+  "employee",
+  "employee_name",
+  "column_break_puej",
+  "date_of_joining",
+  "probation_period",
+  "column_break_xnbd",
+  "department",
+  "section",
+  "column_break_lvrx",
+  "designation",
+  "branch",
+  "section_break_ugeo",
+  "evaluation_template",
+  "evaluation"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_cuuq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Evaluation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_otos",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_vjnn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xnbd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_section",
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Sections",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lvrx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date Of Joining",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_probation_and_confirmation_period",
+   "fieldname": "probation_period",
+   "fieldtype": "Data",
+   "label": "Probation Period",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_puej",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ugeo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "evaluation_template",
+   "fieldtype": "Link",
+   "label": "Evaluation Template",
+   "options": "Evaluation Template"
+  },
+  {
+   "fieldname": "evaluation",
+   "fieldtype": "Table",
+   "label": "Evaluation",
+   "options": "Evaluations"
+  },
+  {
+   "default": "Eval-",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "label": "Naming Series"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-06 02:17:36.921522",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Employee Evaluation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

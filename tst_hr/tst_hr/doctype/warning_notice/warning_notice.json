@@ -1,0 +1,228 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-06 01:04:47.076075",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_uejw",
+  "amended_from",
+  "naming_series",
+  "section_break_kbnl",
+  "date",
+  "section_break_wknv",
+  "employee",
+  "employee_name",
+  "column_break_hkxp",
+  "department",
+  "section",
+  "column_break_gdgs",
+  "designation",
+  "branch",
+  "section_break_duqc",
+  "first_warning",
+  "second_warning",
+  "final_warning",
+  "section_break_efmh",
+  "strongsubjectstrong",
+  "section_break_zsqo",
+  "strongviolationstrong",
+  "section_break_pnmw",
+  "strongfactsstrong",
+  "section_break_asie",
+  "strongaction_takenstrong",
+  "section_break_fssu",
+  "strongadditional_notesstrong"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_uejw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Warning Notice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Warning-",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wknv",
+   "fieldtype": "Section Break",
+   "label": "Employee Data"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hkxp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_section",
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Sections",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gdgs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_duqc",
+   "fieldtype": "Section Break",
+   "label": "Warning Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "first_warning",
+   "fieldtype": "Check",
+   "label": "First Warning"
+  },
+  {
+   "default": "0",
+   "fieldname": "second_warning",
+   "fieldtype": "Check",
+   "label": "Second Warning"
+  },
+  {
+   "default": "0",
+   "fieldname": "final_warning",
+   "fieldtype": "Check",
+   "label": "Final Warning"
+  },
+  {
+   "fieldname": "section_break_efmh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "strongsubjectstrong",
+   "fieldtype": "Data",
+   "label": "<strong>Subject</strong>"
+  },
+  {
+   "fieldname": "section_break_zsqo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "strongviolationstrong",
+   "fieldtype": "Small Text",
+   "label": "<strong>Violation</strong>"
+  },
+  {
+   "fieldname": "section_break_pnmw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "strongfactsstrong",
+   "fieldtype": "Small Text",
+   "label": "<strong>Facts</strong>"
+  },
+  {
+   "fieldname": "section_break_asie",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "strongaction_takenstrong",
+   "fieldtype": "Small Text",
+   "label": "<strong>Action Taken</strong>"
+  },
+  {
+   "fieldname": "section_break_fssu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "strongadditional_notesstrong",
+   "fieldtype": "Small Text",
+   "label": "<strong>Additional Notes</strong>"
+  },
+  {
+   "fieldname": "section_break_kbnl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-06 01:28:28.379695",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Warning Notice",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

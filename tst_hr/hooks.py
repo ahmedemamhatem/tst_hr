@@ -174,8 +174,9 @@ scheduler_events = {
 }
 
 fixtures = [
-    {"dt": "Custom Field", "filters": [["module", "=", "Tst Hr"]]},
-    {"dt": "Property Setter", "filters": [["module", "=", "Tst Hr"]]},
+    # {"dt": "Custom Field", "filters": [["module", "=", "Tst Hr"]]},
+    # {"dt": "Property Setter", "filters": [["module", "=", "Tst Hr"]]},
+    {"dt": "Print Format", "filters": [["module", "=", "Tst Hr"]]},
 ]
 
 # Testing

@@ -21,7 +21,34 @@
   "designation",
   "branch",
   "section_break_ieql",
-  "update_personal_information"
+  "update_personal_data",
+  "update_bank_data",
+  "section_break_uihb",
+  "old_bank_data_column",
+  "old_bank_name",
+  "old_bank_account",
+  "new_bank_data_column",
+  "new_bank_name",
+  "new_bank_acount",
+  "section_break_jmcq",
+  "old_personal_data_column",
+  "old_iqama_no",
+  "old_mobile_no",
+  "old_email",
+  "old_address",
+  "old_marital_status",
+  "new_personal_data_column",
+  "new_iqama_no",
+  "new_mobile_no",
+  "new_email",
+  "new_address",
+  "new_marital_status",
+  "section_break_mdpa",
+  "change_reason",
+  "section_break_oztm",
+  "attach_bszi",
+  "column_break_xqhe",
+  "attach_oiuo"
  ],
  "fields": [
   {
@@ -114,7 +141,8 @@
    "fieldname": "branch",
    "fieldtype": "Link",
    "label": "Branch",
-   "options": "Branch"
+   "options": "Branch",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_ieql",
@@ -122,16 +150,164 @@
   },
   {
    "default": "0",
-   "fieldname": "update_personal_information",
+   "fieldname": "update_bank_data",
    "fieldtype": "Check",
-   "label": "Update Personal Information"
+   "label": "Update Bank Data"
+  },
+  {
+   "depends_on": "eval:doc.update_bank_data",
+   "fieldname": "section_break_uihb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "old_bank_data_column",
+   "fieldtype": "Column Break",
+   "label": "Old Bank Data"
+  },
+  {
+   "fetch_from": "employee.bank_name",
+   "fieldname": "old_bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.bank_ac_no",
+   "fieldname": "old_bank_account",
+   "fieldtype": "Data",
+   "label": "Bank A/C No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_bank_data_column",
+   "fieldtype": "Column Break",
+   "label": "New Bank Data"
+  },
+  {
+   "fieldname": "new_bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name",
+   "mandatory_depends_on": "eval:doc.update_bank_data"
+  },
+  {
+   "depends_on": "eval:doc.update_bank_data",
+   "fieldname": "new_bank_acount",
+   "fieldtype": "Data",
+   "label": "Bank A/C No."
+  },
+  {
+   "default": "0",
+   "fieldname": "update_personal_data",
+   "fieldtype": "Check",
+   "label": "Update Personal Data"
+  },
+  {
+   "depends_on": "eval:doc.update_personal_data",
+   "fieldname": "section_break_jmcq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "old_personal_data_column",
+   "fieldtype": "Column Break",
+   "label": "Old Personal Data"
+  },
+  {
+   "fetch_from": "employee.custom_iqama_number",
+   "fieldname": "old_iqama_no",
+   "fieldtype": "Data",
+   "label": "Iqama Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.cell_number",
+   "fieldname": "old_mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.personal_email",
+   "fieldname": "old_email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.current_address",
+   "fieldname": "old_address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.marital_status",
+   "fieldname": "old_marital_status",
+   "fieldtype": "Data",
+   "label": "Marital Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_personal_data_column",
+   "fieldtype": "Column Break",
+   "label": "New Personal Data"
+  },
+  {
+   "fieldname": "new_iqama_no",
+   "fieldtype": "Data",
+   "label": "Iqama Number"
+  },
+  {
+   "fieldname": "new_mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "new_email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "new_address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "new_marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried\nDivorced\nWidowed"
+  },
+  {
+   "fieldname": "section_break_mdpa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "change_reason",
+   "fieldtype": "Small Text",
+   "label": "Change Reason"
+  },
+  {
+   "fieldname": "section_break_oztm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "attach_bszi",
+   "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "column_break_xqhe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_oiuo",
+   "fieldtype": "Attach"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-05 04:23:56.662028",
+ "modified": "2025-07-11 03:15:44.177655",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Employee Data Change Request",

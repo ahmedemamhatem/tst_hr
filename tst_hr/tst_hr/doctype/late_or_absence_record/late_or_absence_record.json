@@ -99,7 +99,8 @@
    "fieldname": "section",
    "fieldtype": "Link",
    "label": "Section",
-   "options": "Sections"
+   "options": "Sections",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_wupg",
@@ -146,7 +147,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-05 04:38:07.185589",
+ "modified": "2025-07-14 20:08:30.175587",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Late or Absence Record",

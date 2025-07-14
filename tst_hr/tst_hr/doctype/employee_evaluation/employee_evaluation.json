@@ -149,14 +149,16 @@
    "default": "Eval-",
    "fieldname": "naming_series",
    "fieldtype": "Data",
-   "label": "Naming Series"
+   "hidden": 1,
+   "label": "Naming Series",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-06 02:17:36.921522",
+ "modified": "2025-07-14 20:07:19.711093",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Employee Evaluation",

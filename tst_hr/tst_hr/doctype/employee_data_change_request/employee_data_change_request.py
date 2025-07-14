@@ -1,9 +1,27 @@
 # Copyright (c) 2025, TST Developer and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
 class EmployeeDataChangeRequest(Document):
-	pass
+	def on_submit(self):
+		if not self.employee:
+			frappe.throw("Employee is required")
+
+		if self.update_personal_data:
+			update_employee_field(self.employee, "marital_status", self.new_marital_status)
+			update_employee_field(self.employee, "current_address", self.new_address)
+			update_employee_field(self.employee, "personal_email", self.new_email)
+			update_employee_field(self.employee, "cell_number", self.new_mobile_no)
+			update_employee_field(self.employee, "custom_iqama_number", self.new_iqama_no)
+
+		elif self.update_bank_data:
+			update_employee_field(self.employee, "bank_ac_no", self.new_bank_acount)
+			update_employee_field(self.employee, "bank_name", self.new_bank_name)
+
+
+def update_employee_field(employee, fieldname, value):
+    if value:
+        frappe.db.set_value("Employee", employee, fieldname, value)

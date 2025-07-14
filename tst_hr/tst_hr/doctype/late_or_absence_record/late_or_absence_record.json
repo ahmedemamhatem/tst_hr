@@ -22,6 +22,7 @@
   "late",
   "absence",
   "date",
+  "days",
   "hours_late",
   "reason"
  ],
@@ -124,15 +125,18 @@
    "label": "Date"
   },
   {
+   "depends_on": "eval:doc.late",
    "fieldname": "hours_late",
    "fieldtype": "Duration",
-   "label": "Hours Late"
+   "label": "Hours Late",
+   "mandatory_depends_on": "eval:doc.late"
   },
   {
    "description": "Reason provided by the employee.",
    "fieldname": "reason",
    "fieldtype": "Small Text",
-   "label": "Reason"
+   "label": "Reason",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_tlte",
@@ -141,13 +145,20 @@
   {
    "fieldname": "column_break_apae",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.absence",
+   "fieldname": "days",
+   "fieldtype": "Int",
+   "label": "Days",
+   "mandatory_depends_on": "eval:doc.absence"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-14 20:08:30.175587",
+ "modified": "2025-07-14 20:26:15.198571",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Late or Absence Record",

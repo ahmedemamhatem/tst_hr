@@ -52,7 +52,7 @@ class GeneralAnnouncement(Document):
 				f"""
 				SELECT user_id
 				FROM `tabEmployee`
-				WHERE status = 'Active' AND {conditions}
+				WHERE status = 'Active'{conditions}
 				""",
 				params
 			)
@@ -76,6 +76,7 @@ def send_announcement_email(docname, doctype, print_format, subject, recipients=
 
     # Check if attach_enof has a file attached
     if attatchement:
+        frappe.throw("test")
         # Get the file object
         file_doc = frappe.get_doc("File", {"file_url": attatchement})
         file_content = get_file(attatchement)[1]

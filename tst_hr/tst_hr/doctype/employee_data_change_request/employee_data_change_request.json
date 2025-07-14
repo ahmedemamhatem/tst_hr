@@ -32,17 +32,33 @@
   "new_bank_acount",
   "section_break_jmcq",
   "old_personal_data_column",
-  "old_iqama_no",
   "old_mobile_no",
   "old_email",
   "old_address",
   "old_marital_status",
   "new_personal_data_column",
-  "new_iqama_no",
   "new_mobile_no",
   "new_email",
   "new_address",
   "new_marital_status",
+  "section_break_mgqx",
+  "old_data_column",
+  "old_iqama_no",
+  "old_iqama_expiry_date",
+  "old_sponsor",
+  "column_break_sxuq",
+  "new_iqama_no",
+  "new_iqama_expiry_date",
+  "new_sponsor",
+  "section_break_rhys",
+  "old_data_1",
+  "old_health_insurance_provider",
+  "old_expiry_date",
+  "old_insurance_policy_type",
+  "column_break_jgda",
+  "new_health_insurance_provider",
+  "new_expiry_date",
+  "new_insurance_policy_type",
   "section_break_mdpa",
   "change_reason",
   "section_break_oztm",
@@ -202,14 +218,16 @@
    "label": "Update Personal Data"
   },
   {
+   "collapsible": 1,
    "depends_on": "eval:doc.update_personal_data",
    "fieldname": "section_break_jmcq",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Personal Data"
   },
   {
    "fieldname": "old_personal_data_column",
    "fieldtype": "Column Break",
-   "label": "Old Personal Data"
+   "label": "Old Data"
   },
   {
    "fetch_from": "employee.custom_iqama_number",
@@ -249,7 +267,7 @@
   {
    "fieldname": "new_personal_data_column",
    "fieldtype": "Column Break",
-   "label": "New Personal Data"
+   "label": "New Data"
   },
   {
    "fieldname": "new_iqama_no",
@@ -301,13 +319,110 @@
   {
    "fieldname": "attach_oiuo",
    "fieldtype": "Attach"
+  },
+  {
+   "fetch_from": "employee.custom_iqama_expiry_date",
+   "fieldname": "old_iqama_expiry_date",
+   "fieldtype": "Date",
+   "label": "Iqama Expiry Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_iqama_expiry_date",
+   "fieldtype": "Date",
+   "label": "Iqama Expiry Date"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.update_personal_data",
+   "fieldname": "section_break_mgqx",
+   "fieldtype": "Section Break",
+   "label": "Iqama"
+  },
+  {
+   "fetch_from": "employee.custom_sponsor",
+   "fieldname": "old_sponsor",
+   "fieldtype": "Data",
+   "label": "Sponsor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sxuq",
+   "fieldtype": "Column Break",
+   "label": "New Data"
+  },
+  {
+   "fieldname": "new_sponsor",
+   "fieldtype": "Link",
+   "label": "Sponsor",
+   "options": "Sponsor"
+  },
+  {
+   "fieldname": "old_data_column",
+   "fieldtype": "Column Break",
+   "label": "Old Data"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.update_personal_data",
+   "fieldname": "section_break_rhys",
+   "fieldtype": "Section Break",
+   "label": "Health Insurance"
+  },
+  {
+   "fetch_from": "employee.health_insurance_provider",
+   "fieldname": "old_health_insurance_provider",
+   "fieldtype": "Data",
+   "label": "Health Insurance Provider",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_expiry_date",
+   "fieldname": "old_expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_insurance_policy_type",
+   "fieldname": "old_insurance_policy_type",
+   "fieldtype": "Data",
+   "label": "Insurance Policy Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jgda",
+   "fieldtype": "Column Break",
+   "label": "New Data"
+  },
+  {
+   "fieldname": "new_health_insurance_provider",
+   "fieldtype": "Link",
+   "label": "Health Insurance Provider",
+   "options": "Employee Health Insurance"
+  },
+  {
+   "fieldname": "new_expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "new_insurance_policy_type",
+   "fieldtype": "Select",
+   "label": "Insurance Policy Type",
+   "options": "\nA\nB\nC\nD"
+  },
+  {
+   "fieldname": "old_data_1",
+   "fieldtype": "Column Break",
+   "label": "Old Data"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-11 03:15:44.177655",
+ "modified": "2025-07-14 23:12:54.744792",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Employee Data Change Request",

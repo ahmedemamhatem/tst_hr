@@ -6,6 +6,10 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "reference_section",
+  "reference_doctype",
+  "column_break_sxgq",
+  "reference_link",
   "section_break_uejw",
   "amended_from",
   "naming_series",
@@ -27,13 +31,15 @@
   "section_break_efmh",
   "strongsubjectstrong",
   "section_break_zsqo",
-  "strongviolationstrong",
+  "violation",
   "section_break_pnmw",
-  "strongfactsstrong",
+  "facts",
   "section_break_asie",
-  "strongaction_takenstrong",
+  "action_taken",
   "section_break_fssu",
-  "strongadditional_notesstrong"
+  "additional_notes",
+  "warning_logs_tab",
+  "logs"
  ],
  "fields": [
   {
@@ -155,36 +161,16 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "strongviolationstrong",
-   "fieldtype": "Small Text",
-   "label": "<strong>Violation</strong>"
-  },
-  {
    "fieldname": "section_break_pnmw",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "strongfactsstrong",
-   "fieldtype": "Small Text",
-   "label": "<strong>Facts</strong>"
   },
   {
    "fieldname": "section_break_asie",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "strongaction_takenstrong",
-   "fieldtype": "Small Text",
-   "label": "<strong>Action Taken</strong>"
-  },
-  {
    "fieldname": "section_break_fssu",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "strongadditional_notesstrong",
-   "fieldtype": "Small Text",
-   "label": "<strong>Additional Notes</strong>"
   },
   {
    "fieldname": "section_break_kbnl",
@@ -195,13 +181,68 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Reference Doctype",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sxgq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "reference_link",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Link",
+   "options": "reference_doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warning_logs_tab",
+   "fieldtype": "Tab Break",
+   "label": "Warning Logs"
+  },
+  {
+   "fieldname": "logs",
+   "fieldtype": "Table",
+   "label": "Logs",
+   "options": "Warning Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "violation",
+   "fieldtype": "Small Text",
+   "label": "<strong>Violation</strong>"
+  },
+  {
+   "fieldname": "facts",
+   "fieldtype": "Small Text",
+   "label": "<strong>Facts</strong>"
+  },
+  {
+   "fieldname": "action_taken",
+   "fieldtype": "Small Text",
+   "label": "<strong>Action Taken</strong>"
+  },
+  {
+   "fieldname": "additional_notes",
+   "fieldtype": "Small Text",
+   "label": "<strong>Additional Notes</strong>"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-06 01:28:28.379695",
+ "modified": "2025-07-24 23:53:26.219133",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Warning Notice",

@@ -10,7 +10,7 @@
   "section_break_pmff",
   "date",
   "column_break_afag",
-  "subject",
+  "insurance_upgrade_cost",
   "section_break_qfru",
   "employee",
   "employee_name",
@@ -23,6 +23,7 @@
   "section_break_ieql",
   "update_personal_data",
   "update_bank_data",
+  "update_insurance_data",
   "section_break_uihb",
   "old_bank_data_column",
   "old_bank_name",
@@ -96,11 +97,6 @@
   {
    "fieldname": "column_break_afag",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "subject",
-   "fieldtype": "Data",
-   "label": "Subject"
   },
   {
    "fieldname": "section_break_qfru",
@@ -364,7 +360,7 @@
   },
   {
    "collapsible": 1,
-   "depends_on": "eval:doc.update_personal_data",
+   "depends_on": "eval:doc.update_insurance_data",
    "fieldname": "section_break_rhys",
    "fieldtype": "Section Break",
    "label": "Health Insurance"
@@ -416,13 +412,25 @@
    "fieldname": "old_data_1",
    "fieldtype": "Column Break",
    "label": "Old Data"
+  },
+  {
+   "default": "0",
+   "fieldname": "update_insurance_data",
+   "fieldtype": "Check",
+   "label": "Update Insurance Data"
+  },
+  {
+   "depends_on": "eval:doc.update_insurance_data",
+   "fieldname": "insurance_upgrade_cost",
+   "fieldtype": "Float",
+   "label": "Insurance Upgrade Cost"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-14 23:12:54.744792",
+ "modified": "2025-07-24 19:35:49.257206",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Employee Data Change Request",

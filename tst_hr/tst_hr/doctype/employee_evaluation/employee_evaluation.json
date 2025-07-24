@@ -14,6 +14,7 @@
   "section_break_vjnn",
   "employee",
   "employee_name",
+  "employee_probation",
   "column_break_puej",
   "date_of_joining",
   "probation_period",
@@ -120,10 +121,11 @@
   },
   {
    "fetch_from": "employee.custom_probation_and_confirmation_period",
+   "fetch_if_empty": 1,
    "fieldname": "probation_period",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "Probation Period",
-   "read_only": 1
+   "options": "\n90 Days\n180 Days\nConfirmed\nNot Confirmed"
   },
   {
    "fieldname": "column_break_puej",
@@ -152,13 +154,21 @@
    "hidden": 1,
    "label": "Naming Series",
    "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_probation_and_confirmation_period",
+   "fieldname": "employee_probation",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Employee Probation",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-14 20:07:19.711093",
+ "modified": "2025-07-24 21:48:29.850926",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Employee Evaluation",

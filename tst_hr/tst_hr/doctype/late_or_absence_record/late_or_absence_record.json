@@ -9,6 +9,8 @@
   "amended_from",
   "section_break_okxn",
   "posting_date",
+  "column_break_ggzh",
+  "company",
   "section_break_cwof",
   "employee",
   "employee_name",
@@ -25,7 +27,12 @@
   "days",
   "to_date",
   "hours_late",
-  "reason"
+  "reason",
+  "section_break_vlrz",
+  "action",
+  "from_date",
+  "deduction_days",
+  "to_date_action"
  ],
  "fields": [
   {
@@ -159,13 +166,64 @@
    "fieldtype": "Date",
    "label": "To Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_vlrz",
+   "fieldtype": "Section Break",
+   "label": "Action"
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Select",
+   "label": "Action",
+   "options": "\nDeduct from leave days\nDeduct from salary"
+  },
+  {
+   "depends_on": "eval:doc.action",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory_depends_on": "eval:doc.action"
+  },
+  {
+   "depends_on": "eval:doc.action",
+   "fieldname": "deduction_days",
+   "fieldtype": "Int",
+   "label": "Deduction Days",
+   "mandatory_depends_on": "eval:doc.action"
+  },
+  {
+   "fieldname": "to_date_action",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ggzh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-07-14 20:51:11.428441",
+ "links": [
+  {
+   "link_doctype": "Leave Application",
+   "link_fieldname": "custom_reference_link"
+  },
+  {
+   "link_doctype": "Attendance",
+   "link_fieldname": "custom_reference_link"
+  }
+ ],
+ "modified": "2025-07-24 18:28:33.819568",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Late or Absence Record",

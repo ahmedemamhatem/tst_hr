@@ -130,23 +130,23 @@ def send_email_probation_and_confirmation_period_to_hr(employee_id, employee_nam
 
     subject = f" برجاء مراجعه مدير الموظف {employee_name}"
 
-    yes_link = f"{base_url}/api/method/tst_hr.tasks.confirmation_response?employee_id={employee_id}&response=Confirmed"
-    no_link = f"{base_url}/api/method/tst_hr.tasks.confirmation_response?employee_id={employee_id}&response=Not Confirmed"
+    # yes_link = f"{base_url}/api/method/tst_hr.tasks.confirmation_response?employee_id={employee_id}&response=Confirmed"
+    # no_link = f"{base_url}/api/method/tst_hr.tasks.confirmation_response?employee_id={employee_id}&response=Not Confirmed"
 
     message = f"""
 
     برجاء مراجعه مدير الموظف  **{employee_name}**:
 
-    <ul>
-      <li><a href="{yes_link}">✔️ تثبيت الموظف</a></li>
-      <li><a href="{no_link}">❌ عدم التثبيت</a></li>
     """
+    # <ul>
+    #   <li><a href="{yes_link}">✔️ تثبيت الموظف</a></li>
+    #   <li><a href="{no_link}">❌ عدم التثبيت</a></li>
 
-    if include_extend_option:
-        extend_link = f"{base_url}/api/method/tst_hr.tasks.confirmation_response?employee_id={employee_id}&response=180 Days"
-        message += f'<li><a href="{extend_link}">🔁 180 طلب تمديد</a></li>'
+    # if include_extend_option:
+    #     extend_link = f"{base_url}/api/method/tst_hr.tasks.confirmation_response?employee_id={employee_id}&response=180 Days"
+    #     message += f'<li><a href="{extend_link}">🔁 180 طلب تمديد</a></li>'
 
-    message += "</ul>"
+    # message += "</ul>"
 
     frappe.sendmail(
         recipients=recipients,

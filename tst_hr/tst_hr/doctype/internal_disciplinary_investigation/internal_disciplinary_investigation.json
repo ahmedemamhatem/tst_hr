@@ -11,6 +11,8 @@
   "naming_series",
   "section_break_mlki",
   "date",
+  "column_break_jnft",
+  "company",
   "section_break_ckkz",
   "employee",
   "employee_name",
@@ -33,9 +35,10 @@
   "issue_verbal_warning",
   "issue_warning",
   "salary_deduction",
-  "terminate_employment",
-  "other",
-  "clarification"
+  "from_date",
+  "deduction_days",
+  "to_date",
+  "terminate_employment"
  ],
  "fields": [
   {
@@ -195,31 +198,50 @@
    "label": "Terminate Employment"
   },
   {
-   "default": "0",
-   "fieldname": "other",
-   "fieldtype": "Check",
-   "label": "Other"
-  },
-  {
-   "depends_on": "eval:doc.other",
-   "fieldname": "clarification",
-   "fieldtype": "Small Text",
-   "label": "Clarification"
-  },
-  {
    "default": "Invest-",
    "fieldname": "naming_series",
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Naming Series",
    "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.salary_deduction",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory_depends_on": "eval:doc.salary_deduction"
+  },
+  {
+   "depends_on": "eval:doc.salary_deduction",
+   "fieldname": "deduction_days",
+   "fieldtype": "Int",
+   "label": "Deduction Days",
+   "mandatory_depends_on": "eval:doc.salary_deduction"
+  },
+  {
+   "depends_on": "eval:doc.salary_deduction",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jnft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-06 01:01:28.205991",
+ "modified": "2025-07-24 20:57:38.929706",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Internal Disciplinary Investigation",

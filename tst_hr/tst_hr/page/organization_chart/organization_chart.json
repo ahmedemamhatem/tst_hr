@@ -4,13 +4,20 @@
  "docstatus": 0,
  "doctype": "Page",
  "idx": 0,
- "modified": "2025-07-11 17:50:47.307733",
+ "modified": "2025-07-25 01:46:12.227767",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "organization-chart",
  "owner": "Administrator",
  "page_name": "organization-chart",
- "roles": [],
+ "roles": [
+  {
+   "role": "HR User"
+  },
+  {
+   "role": "HR Manager"
+  }
+ ],
  "script": null,
  "standard": "Yes",
  "style": null,

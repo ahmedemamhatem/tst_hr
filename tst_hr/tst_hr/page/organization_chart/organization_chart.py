@@ -8,7 +8,7 @@ def get_organization_tree(department=None, branch=None, section=None, company=No
     if branch:
         head_filters["branch"] = branch
     if section:
-        head_filters["section"] = section
+        head_filters["custom_section"] = section
     if company:
         head_filters["company"] = company
 

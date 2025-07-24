@@ -13,7 +13,7 @@ frappe.pages['organization-chart'].on_page_load = function(wrapper) {
     // Filters
     let department_filter = page.add_field({ label: __("Department"), fieldtype: "Link", fieldname: "department", options: "Department", change: fetch_and_render_chart });
     let branch_filter = page.add_field({ label: __("Branch"), fieldtype: "Link", fieldname: "branch", options: "Branch", change: fetch_and_render_chart });
-    let section_filter = page.add_field({ label: __("Section"), fieldtype: "Link", fieldname: "section", options: "Section", change: fetch_and_render_chart });
+    let section_filter = page.add_field({ label: __("Section"), fieldtype: "Link", fieldname: "section", options: "Sections", change: fetch_and_render_chart });
     let company_filter = page.add_field({ label: __("Company"), fieldtype: "Link", fieldname: "company", options: "Company", change: fetch_and_render_chart });
     let chart_type_filter = page.add_field({
         label: __("Chart Type"),

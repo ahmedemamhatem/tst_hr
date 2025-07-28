@@ -24,6 +24,8 @@
   "column_break_gdgs",
   "designation",
   "branch",
+  "section_break_neia",
+  "logs",
   "section_break_duqc",
   "first_warning",
   "second_warning",
@@ -37,9 +39,7 @@
   "section_break_asie",
   "action_taken",
   "section_break_fssu",
-  "additional_notes",
-  "warning_logs_tab",
-  "logs"
+  "additional_notes"
  ],
  "fields": [
   {
@@ -206,11 +206,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "warning_logs_tab",
-   "fieldtype": "Tab Break",
-   "label": "Warning Logs"
-  },
-  {
    "fieldname": "logs",
    "fieldtype": "Table",
    "label": "Logs",
@@ -236,13 +231,19 @@
    "fieldname": "additional_notes",
    "fieldtype": "Small Text",
    "label": "<strong>Additional Notes</strong>"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_neia",
+   "fieldtype": "Section Break",
+   "label": "Warning Logs"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-24 23:53:26.219133",
+ "modified": "2025-07-28 23:17:37.242017",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Warning Notice",

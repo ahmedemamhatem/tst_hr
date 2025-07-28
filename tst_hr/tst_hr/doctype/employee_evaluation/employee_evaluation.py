@@ -7,6 +7,9 @@ from frappe.model.document import Document
 
 class EmployeeEvaluation(Document):
     def validate(self):
+        if self.employee_probation == "Confirmed" and self.probation_period in ["90 Days", "180 Days"]:
+            frappe.throw(f"Can't Change Employee probation from {self.employee_probation} to {self.probation_period}")
+            
         if self.docstatus == 1:
             if self.employee_probation != self.probation_period:
                 self.update_employee_evaluation()

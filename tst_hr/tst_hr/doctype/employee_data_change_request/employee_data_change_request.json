@@ -11,6 +11,7 @@
   "date",
   "column_break_afag",
   "insurance_upgrade_cost",
+  "repayment_periods",
   "section_break_qfru",
   "employee",
   "employee_name",
@@ -424,13 +425,19 @@
    "fieldname": "insurance_upgrade_cost",
    "fieldtype": "Float",
    "label": "Insurance Upgrade Cost"
+  },
+  {
+   "depends_on": "eval:doc.insurance_upgrade_cost",
+   "fieldname": "repayment_periods",
+   "fieldtype": "Int",
+   "label": "Repayment Periods"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-24 19:35:49.257206",
+ "modified": "2025-08-02 21:11:19.852782",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Employee Data Change Request",

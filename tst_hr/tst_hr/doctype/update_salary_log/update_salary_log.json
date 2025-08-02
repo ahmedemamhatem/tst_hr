@@ -9,6 +9,8 @@
   "previous_salary",
   "current_salary",
   "date",
+  "reference_doctype",
+  "reference_link",
   "change_reason",
   "gosi_updated"
  ],
@@ -30,7 +32,6 @@
   {
    "fieldname": "change_reason",
    "fieldtype": "Small Text",
-   "in_list_view": 1,
    "label": "Change Reason",
    "read_only": 1
   },
@@ -47,13 +48,29 @@
    "in_list_view": 1,
    "label": "Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "reference_link",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Reference Link",
+   "options": "reference_doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Reference Doctype",
+   "options": "DocType",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-28 05:04:16.428818",
+ "modified": "2025-08-02 04:27:39.853564",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Update Salary Log",

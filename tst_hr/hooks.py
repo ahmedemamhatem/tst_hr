@@ -144,7 +144,11 @@ override_doctype_class = {
 doc_events = {
     "Employee":{
         "validate":"tst_hr.triggers.setup.employee.employee.validate"
-    }
+    },
+    "Salary Structure Assignment":{
+		"before_insert":"tst_hr.triggers.hr.salary_structure_assignment.salary_structure_assignment.before_insert",
+		"on_submit":"tst_hr.triggers.hr.salary_structure_assignment.salary_structure_assignment.on_submit"
+	}
 	# "*": {
 	# 	"on_update": "method",
 	# 	"on_cancel": "method",

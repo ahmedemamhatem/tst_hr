@@ -1,0 +1,235 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-02 03:45:43.406924",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_section",
+  "reference_doctype",
+  "column_break_dtij",
+  "reference_link",
+  "section_break_iv30",
+  "amended_from",
+  "section_break_armn",
+  "posting_date",
+  "column_break_mwqo",
+  "company",
+  "section_break_cwqc",
+  "employee",
+  "employee_name",
+  "current_salary",
+  "column_break_hsmt",
+  "date_of_joining",
+  "resignation_date",
+  "working_years",
+  "section_break_lpfi",
+  "remaining_leave_days",
+  "column_break_plnk",
+  "leave_amount",
+  "section_break_jsvi",
+  "salary",
+  "section_break_dgrw",
+  "additional_salary",
+  "section_break_qpao",
+  "end_of_service_benefit",
+  "column_break_nzix",
+  "net_salary"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_iv30",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Final Settlement",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_armn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "section_break_cwqc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hsmt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date Of Joining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resignation_date",
+   "fieldtype": "Date",
+   "label": "Resignation Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_lpfi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remaining_leave_days",
+   "fieldtype": "Float",
+   "label": "Remaining Leave Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_plnk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leave_amount",
+   "fieldtype": "Float",
+   "label": "Leave Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jsvi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "salary",
+   "fieldtype": "Float",
+   "label": "Salary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_dgrw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "additional_salary",
+   "fieldtype": "Table",
+   "label": "Additional Salary",
+   "options": "Final Settlement Details"
+  },
+  {
+   "fieldname": "section_break_qpao",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "net_salary",
+   "fieldtype": "Float",
+   "label": "Net Salary"
+  },
+  {
+   "fieldname": "end_of_service_benefit",
+   "fieldtype": "Float",
+   "label": "End of Service Benefit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nzix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.ctc",
+   "fieldname": "current_salary",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Current Salary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "working_years",
+   "fieldtype": "Float",
+   "label": "Working Years",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mwqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Reference Doctype",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dtij",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_link",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Link",
+   "options": "reference_doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-02 23:00:12.559031",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Final Settlement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

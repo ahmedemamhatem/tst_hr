@@ -23,6 +23,7 @@
   "designation",
   "branch",
   "section_break_ehkl",
+  "investigators_confirm",
   "investigators",
   "section_break_vhtk",
   "subject_of_investigation",
@@ -235,13 +236,20 @@
    "fieldtype": "Link",
    "label": "Company",
    "options": "Company"
+  },
+  {
+   "default": "0",
+   "fieldname": "investigators_confirm",
+   "fieldtype": "Check",
+   "label": "Investigators Confirm",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-24 20:57:38.929706",
+ "modified": "2025-08-02 17:17:15.637362",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Internal Disciplinary Investigation",
@@ -262,6 +270,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

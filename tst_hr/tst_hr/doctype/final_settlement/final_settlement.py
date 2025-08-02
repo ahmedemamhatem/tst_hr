@@ -112,8 +112,8 @@ def create_payroll_for_employee(employee,company, posting_date=None, resignation
     payroll_entry.end_date = end_date
     payroll_entry.posting_date = posting_date
     payroll_entry.exchange_rate = 1
-    # payroll_entry.payroll_payable_account = get_default_payment_account(company)
-    payroll_entry.payroll_payable_account = "2120 - Payroll Payable - T"
+    payroll_entry.payroll_payable_account = get_default_payment_account(company)
+    # payroll_entry.payroll_payable_account = "2120 - Payroll Payable - T"
 
     # Add only the current employee
     payroll_entry.append("employees", {

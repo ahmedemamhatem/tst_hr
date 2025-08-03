@@ -7,8 +7,38 @@ from frappe.utils import add_days, getdate
 
 
 class LateorAbsenceRecord(Document):
+    def share_with_investigators(self):
+        if not self.is_new():
+            # Get user linked to employee
+            user = frappe.db.get_value("Employee", self.employee, "user_id")
+            if user:
+                # Check if already shared
+                already_shared = frappe.db.exists(
+                    "DocShare",
+                    {
+                        "user": user,
+                        "share_doctype": self.doctype,
+                        "share_name": self.name
+                    }
+                )
+                if not already_shared:
+                    # Share with read and write permissions
+                    frappe.share.add(
+                        self.doctype,
+                        self.name,
+                        user,
+                        read=1,
+                        write=1,
+                        share=0,
+                        everyone=0
+                    )
+
+    def after_insert(self):
+        self.share_with_investigators()
+
     @frappe.whitelist()
     def validate(self):
+        self.share_with_investigators()
         if self.docstatus == 1:
             self.take_action()
    

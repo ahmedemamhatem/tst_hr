@@ -37,31 +37,32 @@ class InternalDisciplinaryInvestigation(Document):
         self.share_with_investigators()
 
     def share_with_investigators(self):
-        # Share the doc with each User (if any) linked to Employee in investigators table
-        for inv in self.investigators or []:
-            # Get user linked to employee
-            user = frappe.db.get_value("Employee", inv.employee, "user_id")
-            if user:
-                # Check if already shared
-                already_shared = frappe.db.exists(
-                    "DocShare",
-                    {
-                        "user": user,
-                        "share_doctype": self.doctype,
-                        "share_name": self.name
-                    }
-                )
-                if not already_shared:
-                    # Share with read and write permissions
-                    frappe.share.add(
-                        self.doctype,
-                        self.name,
-                        user,
-                        read=1,
-                        write=1,
-                        share=0,
-                        everyone=0
+        if not self.is_new():
+            # Share the doc with each User (if any) linked to Employee in investigators table
+            for inv in self.investigators or []:
+                # Get user linked to employee
+                user = frappe.db.get_value("Employee", inv.employee, "user_id")
+                if user:
+                    # Check if already shared
+                    already_shared = frappe.db.exists(
+                        "DocShare",
+                        {
+                            "user": user,
+                            "share_doctype": self.doctype,
+                            "share_name": self.name
+                        }
                     )
+                    if not already_shared:
+                        # Share with read and write permissions
+                        frappe.share.add(
+                            self.doctype,
+                            self.name,
+                            user,
+                            read=1,
+                            write=1,
+                            share=0,
+                            everyone=0
+                        )
 
     def create_absent_attendance(self):
         # Ensure required fields are present

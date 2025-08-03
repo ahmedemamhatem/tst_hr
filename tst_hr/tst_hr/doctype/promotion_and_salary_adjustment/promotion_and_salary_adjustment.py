@@ -38,6 +38,8 @@ class PromotionandSalaryAdjustment(Document):
 			employee_doc.append("custom_salary_logs",{
 				"previous_salary":self.current_salary,
 				"current_salary":self.new_salary,
+				"reference_doctype":"Promotion and Salary Adjustment",
+				"reference_link":self.name,
 				"change_reason":self.request_reason,
 				"date":frappe.utils.today()
 			})

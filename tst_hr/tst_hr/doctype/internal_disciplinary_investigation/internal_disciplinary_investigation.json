@@ -23,7 +23,6 @@
   "designation",
   "branch",
   "section_break_ehkl",
-  "investigators_confirm",
   "investigators",
   "section_break_vhtk",
   "subject_of_investigation",
@@ -39,7 +38,11 @@
   "from_date",
   "deduction_days",
   "to_date",
-  "terminate_employment"
+  "terminate_employment",
+  "section_break_ekql",
+  "reason",
+  "column_break_bnux",
+  "date_of_termination"
  ],
  "fields": [
   {
@@ -238,18 +241,39 @@
    "options": "Company"
   },
   {
-   "default": "0",
-   "fieldname": "investigators_confirm",
-   "fieldtype": "Check",
-   "label": "Investigators Confirm",
-   "read_only": 1
+   "depends_on": "eval:doc.terminate_employment",
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Reason",
+   "mandatory_depends_on": "eval:doc.terminate_employment"
+  },
+  {
+   "depends_on": "eval:doc.terminate_employment",
+   "fieldname": "section_break_ekql",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bnux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.terminate_employment",
+   "fieldname": "date_of_termination",
+   "fieldtype": "Date",
+   "label": "Date of Termination",
+   "mandatory_depends_on": "eval:doc.terminate_employment"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-08-02 17:17:15.637362",
+ "links": [
+  {
+   "link_doctype": "Termination of Contract",
+   "link_fieldname": "reference_link"
+  }
+ ],
+ "modified": "2025-08-10 00:48:37.375602",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Internal Disciplinary Investigation",
@@ -270,7 +294,6 @@
    "write": 1
   }
  ],
- "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

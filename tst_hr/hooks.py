@@ -148,6 +148,9 @@ doc_events = {
     "Salary Structure Assignment":{
 		"before_insert":"tst_hr.triggers.hr.salary_structure_assignment.salary_structure_assignment.before_insert",
 		"on_submit":"tst_hr.triggers.hr.salary_structure_assignment.salary_structure_assignment.on_submit"
+	},
+    "Salary Slip":{
+		"on_submit":"tst_hr.triggers.hr.salary_slip.salary_slip.on_submit"
 	}
 	# "*": {
 	# 	"on_update": "method",

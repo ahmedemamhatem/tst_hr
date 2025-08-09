@@ -2,10 +2,13 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2025-08-09 23:28:07.349769",
+ "creation": "2025-08-02 03:30:48.889875",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "reference_doctype",
+  "column_break_iunv",
+  "reference_link",
   "section_break_f1om",
   "amended_from",
   "column_break_wtxz",
@@ -19,7 +22,9 @@
   "column_break_vpyi",
   "employee_name",
   "section_break_gldf",
-  "resignation_date"
+  "type",
+  "column_break_ytiw",
+  "date_of_termination"
  ],
  "fields": [
   {
@@ -37,18 +42,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "column_break_wtxz",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "Res-",
-   "fieldname": "naming_series",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Naming Series",
-   "read_only": 1
-  },
-  {
    "fieldname": "section_break_lfyz",
    "fieldtype": "Section Break"
   },
@@ -63,12 +56,6 @@
   {
    "fieldname": "column_break_rgsz",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "reason",
-   "fieldtype": "Data",
-   "label": "Reason",
-   "reqd": 1
   },
   {
    "fieldname": "section_break_bqda",
@@ -98,21 +85,57 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Termination of Contract",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "fieldname": "column_break_wtxz",
+   "fieldtype": "Column Break"
   },
   {
-   "default": "Today",
-   "fieldname": "resignation_date",
+   "default": "Term-",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_of_termination",
    "fieldtype": "Date",
-   "label": "Resignation Date",
+   "label": "Date of Termination",
    "reqd": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Reason",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nCancel Contract\nNot Extend",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ytiw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Reference Doctype",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iunv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_link",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Link",
+   "options": "reference_doctype",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -124,10 +147,10 @@
    "link_fieldname": "reference_link"
   }
  ],
- "modified": "2025-08-09 23:29:50.784368",
+ "modified": "2025-08-10 00:44:18.019141",
  "modified_by": "Administrator",
  "module": "Tst Hr",
- "name": "Resignation",
+ "name": "Termination of Contract",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [

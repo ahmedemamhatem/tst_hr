@@ -26,7 +26,8 @@ class InternalDisciplinaryInvestigation(Document):
         # --- Existing logic below ---
         if self.docstatus == 1:
             if self.terminate_employment:
-                update_employee_status(self.employee, "Inactive")
+                # update_employee_status(self.employee, "Inactive")
+                create_employee_termination(self)
             elif self.salary_deduction:
                 self.create_absent_attendance()
             elif self.issue_warning:
@@ -167,5 +168,24 @@ def create_warning_if_needed(id, employee, date=None):
         frappe.msgprint(
             _(f"{warning_type} <a href='/app/warning-notice/{warning.name}' target='_blank'>{warning.name}</a> Created Successfully"),
             title="Warning Notice Created",
+            indicator="green"
+        )
+        
+        
+def create_employee_termination(self):
+    employee_termination = frappe.new_doc("Termination of Contract")
+    employee_termination.employee = self.employee
+    employee_termination.reason = self.reason
+    employee_termination.type = "Not Extend"
+    employee_termination.date_of_termination = self.date_of_termination
+    employee_termination.reference_doctype = "Internal Disciplinary Investigation"
+    employee_termination.reference_link = self.name
+    
+    employee_termination.insert()
+    
+    if employee_termination.name:
+        frappe.msgprint(
+            _(f"Termination of Contract <a href='/app/termination-of-contract/{employee_termination.name}' target='_blank'>{employee_termination.name}</a> Created Successfully"),
+            title="Termination of Contract Created",
             indicator="green"
         )

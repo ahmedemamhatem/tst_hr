@@ -21,10 +21,11 @@
   "current_salary",
   "column_break_hsmt",
   "date_of_joining",
-  "resignation_date",
   "working_years",
+  "end_date",
   "section_break_lpfi",
   "remaining_leave_days",
+  "salary_per_day",
   "column_break_plnk",
   "leave_amount",
   "section_break_jsvi",
@@ -90,12 +91,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "resignation_date",
-   "fieldtype": "Date",
-   "label": "Resignation Date",
-   "read_only": 1
-  },
-  {
    "fieldname": "section_break_lpfi",
    "fieldtype": "Section Break"
   },
@@ -142,7 +137,8 @@
   {
    "fieldname": "net_salary",
    "fieldtype": "Float",
-   "label": "Net Salary"
+   "label": "Net Salary",
+   "read_only": 1
   },
   {
    "fieldname": "end_of_service_benefit",
@@ -203,19 +199,47 @@
    "fieldtype": "Section Break",
    "label": "Reference",
    "read_only": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "salary_per_day",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Salary Per Day",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-08-02 23:00:12.559031",
+ "links": [
+  {
+   "link_doctype": "Additional Salary",
+   "link_fieldname": "custom_reference_link"
+  },
+  {
+   "link_doctype": "Payroll Entry",
+   "link_fieldname": "custom_reference_link"
+  },
+  {
+   "link_doctype": "Final Clearance",
+   "link_fieldname": "reference_link"
+  }
+ ],
+ "modified": "2025-08-09 23:03:07.840700",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Final Settlement",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

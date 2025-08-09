@@ -7,6 +7,7 @@ frappe.ui.form.on('Employee', {
 
     },
     refresh:function(frm){
+        open_employment_certificate(frm)
         apply_filter_section(frm)
         hide_salary_logs_add_row(frm)
     },
@@ -93,3 +94,11 @@ function handle_salary_change(frm) {
 }
 
 
+function open_employment_certificate(frm) {
+    if (!frm.is_new()) {
+        frm.add_custom_button(__('Employment Certificate'), function() {
+            var url = `/printview?doctype=Employee&name=${frm.doc.name}&format=Employment Certificate`;
+            window.open(url, '_blank');
+        }).addClass('btn-primary');
+    }
+}

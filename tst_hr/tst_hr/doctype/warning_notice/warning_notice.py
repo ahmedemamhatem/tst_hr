@@ -21,4 +21,4 @@ class WarningNotice(Document):
                 six_months = add_months(last_warning.date,6)
                 
                 if getdate(today()) < six_months:
-                    frappe.msgprint(f"First Warning ALready Exist For This Employee <a href='/app/warning-notice/{last_warning.name}' target ='_blank'>{last_warning.name}</a>")
+                    frappe.throw(f"First Warning ALready Exist For This Employee <a href='/app/warning-notice/{last_warning.name}' target ='_blank'>{last_warning.name}</a>")

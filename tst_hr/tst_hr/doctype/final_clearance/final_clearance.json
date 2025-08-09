@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-09 16:34:08.899022",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_section",
+  "reference_doctype",
+  "column_break_uwst",
+  "reference_link",
+  "section_break_e9xt",
+  "amended_from",
+  "section_break_rzdv",
+  "posting_date",
+  "column_break_iqsf",
+  "company",
+  "tax_id",
+  "section_break_dggp",
+  "employee",
+  "employee_name",
+  "column_break_hkmz",
+  "iqama_number",
+  "nationality",
+  "english_name",
+  "arabic_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_e9xt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Final Clearance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_rzdv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_iqsf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "company.tax_id",
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Tax Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_dggp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hkmz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.custom_iqama_number",
+   "fieldname": "iqama_number",
+   "fieldtype": "Data",
+   "label": "Iqama Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_nationality",
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Nationality",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Reference Doctype",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uwst",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_link",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Link",
+   "options": "reference_doctype",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "nationality.english_name",
+   "fieldname": "english_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "English Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "nationality.arabic_name",
+   "fieldname": "arabic_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Arabic Name",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Experience Certificate",
+   "link_fieldname": "reference_link"
+  }
+ ],
+ "modified": "2025-08-10 00:09:08.985659",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Final Clearance",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

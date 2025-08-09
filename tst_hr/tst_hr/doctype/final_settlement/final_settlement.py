@@ -143,7 +143,8 @@ def create_payroll_for_employee(employee, company, document, posting_date=None, 
             "end_date": end_date,
             "posting_date": posting_date,
             "exchange_rate": 1,
-            "payroll_payable_account": "2120 - Payroll Payable - T"
+            "payroll_payable_account": get_default_payment_account(company)
+            # "payroll_payable_account": "2120 - Payroll Payable - T"
         })
 
         # Add only the current employee

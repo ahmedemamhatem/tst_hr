@@ -29,9 +29,11 @@
   "old_bank_data_column",
   "old_bank_name",
   "old_bank_account",
+  "old_iban",
   "new_bank_data_column",
   "new_bank_name",
   "new_bank_acount",
+  "new_iban",
   "section_break_jmcq",
   "old_personal_data_column",
   "old_mobile_no",
@@ -370,6 +372,7 @@
    "fetch_from": "employee.health_insurance_provider",
    "fieldname": "old_health_insurance_provider",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Health Insurance Provider",
    "read_only": 1
   },
@@ -377,6 +380,7 @@
    "fetch_from": "employee.custom_expiry_date",
    "fieldname": "old_expiry_date",
    "fieldtype": "Date",
+   "hidden": 1,
    "label": "Expiry Date",
    "read_only": 1
   },
@@ -395,12 +399,14 @@
   {
    "fieldname": "new_health_insurance_provider",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Health Insurance Provider",
    "options": "Employee Health Insurance"
   },
   {
    "fieldname": "new_expiry_date",
    "fieldtype": "Date",
+   "hidden": 1,
    "label": "Expiry Date"
   },
   {
@@ -431,13 +437,25 @@
    "fieldname": "repayment_periods",
    "fieldtype": "Int",
    "label": "Repayment Periods"
+  },
+  {
+   "fetch_from": "employee.iban",
+   "fieldname": "old_iban",
+   "fieldtype": "Data",
+   "label": "IBAN",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_iban",
+   "fieldtype": "Data",
+   "label": "IBAN"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-02 21:11:19.852782",
+ "modified": "2025-08-10 21:40:39.218598",
  "modified_by": "Administrator",
  "module": "Tst Hr",
  "name": "Employee Data Change Request",

@@ -22,12 +22,13 @@ class EmployeeDataChangeRequest(Document):
 
             elif self.update_insurance_data:
                 update_employee_field(self.employee, "custom_insurance_policy_type", self.new_insurance_policy_type)
-                update_employee_field(self.employee, "custom_expiry_date", self.new_expiry_date)
-                update_employee_field(self.employee, "health_insurance_provider", self.new_health_insurance_provider)
+                # update_employee_field(self.employee, "custom_expiry_date", self.new_expiry_date)
+                # update_employee_field(self.employee, "health_insurance_provider", self.new_health_insurance_provider)
 
             elif self.update_bank_data:
                 update_employee_field(self.employee, "bank_ac_no", self.new_bank_acount)
                 update_employee_field(self.employee, "bank_name", self.new_bank_name)
+                update_employee_field(self.employee, "bank_namibane", self.new_iban)
         if (self.repayment_periods and self.repayment_periods > 3) and (self.insurance_upgrade_cost and self.insurance_upgrade_cost <= 3000):
             frappe.throw(_("Insurance upgrade cost must be greater than 3000 if repayment periods exceed 3."))
 

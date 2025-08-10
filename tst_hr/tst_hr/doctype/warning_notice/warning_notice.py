@@ -9,7 +9,10 @@ class WarningNotice(Document):
     @frappe.whitelist()
     def validate(self):
         # check if first warning already exist
-        self.check_warning()     
+        self.check_warning()   
+        
+        if self.docstatus == 1:
+            send_email(self)  
         
     def check_warning(self):
         # Try to get last submitted warning
@@ -22,3 +25,29 @@ class WarningNotice(Document):
                 
                 if getdate(today()) < six_months:
                     frappe.throw(f"First Warning ALready Exist For This Employee <a href='/app/warning-notice/{last_warning.name}' target ='_blank'>{last_warning.name}</a>")
+                    
+                    
+def send_email(self):
+    # get employee user 
+    user = frappe.get_cached_value("Employee",{"name":self.employee},"user_id")
+    if not user:
+        frappe.throw(_(f"please set employee user in Employee <a href='/app/employee/{self.employee}' target ='_blank'>{self.employee}</a>"))
+    # Generate the main print format PDF
+    pdf_content = frappe.get_print(self.doctype, self.name, print_format="Warning Notice", as_pdf=True)
+    filename = f"{self.name}.pdf"
+
+    # Attachments list
+    attachments = [{
+        "fname": filename,
+        "fcontent": pdf_content
+    }]
+
+    # Send email
+    frappe.sendmail(
+        recipients=user,
+        subject=f"Warning",
+        message="""
+            <p>Warning</p>
+        """,
+        attachments=attachments
+    )

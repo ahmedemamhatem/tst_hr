@@ -165,11 +165,13 @@ def create_warning_if_needed(id, employee, date=None):
     warning.insert(ignore_permissions=True)
 
     if warning.name:
+        document_link = f"<a href='/app/warning-notice/{warning.name}' target='_blank'>{warning.name}</a>"
         frappe.msgprint(
-            _(f"{warning_type} <a href='/app/warning-notice/{warning.name}' target='_blank'>{warning.name}</a> Created Successfully"),
+            _(f"{warning_type} {document_link} Created Successfully"),
             title="Warning Notice Created",
             indicator="green"
         )
+        send_email(employee,document_link,id)
         
         
 def create_employee_termination(self):
@@ -184,8 +186,44 @@ def create_employee_termination(self):
     employee_termination.insert()
     
     if employee_termination.name:
+        document_link = f"<a href='/app/termination-of-contract/{employee_termination.name}' target='_blank'>{employee_termination.name}</a>"
         frappe.msgprint(
-            _(f"Termination of Contract <a href='/app/termination-of-contract/{employee_termination.name}' target='_blank'>{employee_termination.name}</a> Created Successfully"),
+            _(f"Termination of Contract  Created Successfully {document_link}"),
             title="Termination of Contract Created",
             indicator="green"
         )
+        
+        send_email(self.employee,document_link,self.name)
+        
+def get_users_with_any_role(role_list):
+    users = frappe.get_all(
+        "Has Role",
+        filters={"role": ["in", role_list],"parenttype":"User","parentfield":"roles"},
+        fields=["parent as user"]
+    )
+    return list({u.user for u in users})
+
+def send_email(employee,document_link,document_name):
+    # get employee user 
+    roles = ["HR Manager","HR User"]
+    users = get_users_with_any_role(roles)
+    # Generate the main print format PDF
+    pdf_content = frappe.get_print("Internal Disciplinary Investigation", document_name, print_format="Internal Disciplinary Investigation", as_pdf=True)
+    filename = f"{document_name}.pdf"
+
+    # Attachments list
+    attachments = [{
+        "fname": filename,
+        "fcontent": pdf_content
+    }]
+
+    # Send email
+    frappe.sendmail(
+        recipients=users,
+        subject=f"Internal Disciplinary Investigation",
+        message=f"""
+            <p>Internal Disciplinary Investigation</p>
+            <p>click here to see document {document_link}</p>
+        """,
+        attachments=attachments
+    )

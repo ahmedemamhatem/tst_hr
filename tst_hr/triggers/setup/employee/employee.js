@@ -10,6 +10,7 @@ frappe.ui.form.on('Employee', {
         open_employment_certificate(frm)
         apply_filter_section(frm)
         hide_salary_logs_add_row(frm)
+        create_contract(frm)
     },
     onload:function(frm){
         hide_salary_logs_add_row(frm)
@@ -101,4 +102,25 @@ function open_employment_certificate(frm) {
             window.open(url, '_blank');
         }).addClass('btn-primary');
     }
+}
+
+
+function create_contract(frm){
+    if (!frm.is_new()) {
+        frm.add_custom_button(__('Contract'), function() {
+            // Create a new Contract doc in memory
+            let doc = frappe.model.get_new_doc("Employee Contract");
+
+            // Prefill fields from Employee
+            doc.employee_id = frm.doc.name;
+            doc.full_name = frm.doc.employee_name;
+            doc.nationality = frm.doc.custom_nationality;
+            doc.reports_to = frm.doc.reports_to;
+            doc.joining_date = frm.doc.date_of_joining;
+
+            // Redirect to new Contract form (unsaved)
+            frappe.set_route("Form", "Employee Contract", doc.name);
+        }, __('Create'));
+    }
+    
 }

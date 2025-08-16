@@ -35,7 +35,6 @@ def calculate_base_salary(doc):
 def update_employee_salary(doc):
     # get employee doc to update it and append new log for salary update
     employee_doc = frappe.get_doc("Employee",doc.employee)
-    employee_doc.ctc = doc.base
 
     employee_doc.append("custom_salary_logs",{
         "previous_salary":employee_doc.ctc,
@@ -45,6 +44,8 @@ def update_employee_salary(doc):
         # "change_reason":doc.request_reason,
         "date":frappe.utils.today()
     })
+    
+    employee_doc.ctc = doc.base
 
     employee_doc.save()   
         

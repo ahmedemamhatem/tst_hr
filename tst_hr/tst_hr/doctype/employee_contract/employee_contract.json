@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-16 17:47:11.264806",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_oekg",
+  "amended_from",
+  "column_break_ogmr",
+  "naming_series",
+  "employee_data_section",
+  "employee_id",
+  "full_name",
+  "nationality",
+  "company",
+  "column_break_wnmq",
+  "contract_type",
+  "joining_date",
+  "reports_to",
+  "contract_details_section",
+  "contract_no",
+  "start_date",
+  "end_date",
+  "column_break_exge",
+  "contract_tove",
+  "section_break_pdmv",
+  "earnings",
+  "deductions"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_oekg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee_data_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Data"
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.custom_nationality",
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wnmq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Contract",
+   "fieldname": "contract_type",
+   "fieldtype": "Data",
+   "label": "Contract Type"
+  },
+  {
+   "fetch_from": "employee_id.date_of_joining",
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Joining Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.reports_to",
+   "fieldname": "reports_to",
+   "fieldtype": "Link",
+   "label": "Reports To",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "fieldname": "contract_no",
+   "fieldtype": "Data",
+   "label": "Contract No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "column_break_exge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_tove",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Contract Tove",
+   "options": "\nFixed-term Contract\nIndefinite Contract\nTemporary Contract\nSeasonal Contract\nCasual Contract\nPart-time Contract\nTraining Contract",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_pdmv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "earnings",
+   "fieldtype": "Table",
+   "label": "Earnings",
+   "options": "Salary Detail"
+  },
+  {
+   "fieldname": "deductions",
+   "fieldtype": "Table",
+   "label": "Deductions",
+   "options": "Salary Detail"
+  },
+  {
+   "fetch_from": "employee_id.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ogmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Contract-",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-16 21:51:14.274192",
+ "modified_by": "Administrator",
+ "module": "Tst Hr",
+ "name": "Employee Contract",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
